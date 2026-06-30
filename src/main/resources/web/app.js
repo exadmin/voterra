@@ -2,6 +2,7 @@ const loginPanel = document.getElementById('loginPanel');
 const votingPanel = document.getElementById('votingPanel');
 const participantNameInput = document.getElementById('participantName');
 const enterButton = document.getElementById('enterButton');
+const logoutButton = document.getElementById('logoutButton');
 const participantLabel = document.getElementById('participantLabel');
 const questionText = document.getElementById('questionText');
 const progressBar = document.getElementById('progressBar');
@@ -13,6 +14,7 @@ const messageElement = document.getElementById('message');
 let participantName = localStorage.getItem('voterraParticipantName') || '';
 let selectedOptionIds = new Set();
 let activeSessionId = null;
+let audiencePollerId = null;
 
 if (participantName) {
   enterAudience();
@@ -28,12 +30,38 @@ enterButton.addEventListener('click', () => {
   enterAudience();
 });
 
+logoutButton.addEventListener('click', logoutAudience);
+
 function enterAudience() {
   loginPanel.classList.add('hidden');
   votingPanel.classList.remove('hidden');
   participantLabel.textContent = participantName;
   pollState();
-  setInterval(pollState, 1000);
+  if (!audiencePollerId) {
+    audiencePollerId = setInterval(pollState, 1000);
+  }
+}
+
+function logoutAudience() {
+  participantName = '';
+  selectedOptionIds.clear();
+  activeSessionId = null;
+  localStorage.removeItem('voterraParticipantName');
+  if (audiencePollerId) {
+    clearInterval(audiencePollerId);
+    audiencePollerId = null;
+  }
+  participantNameInput.value = '';
+  participantLabel.textContent = '';
+  questionText.textContent = 'Waiting for an active question';
+  optionsElement.innerHTML = '';
+  resultsElement.innerHTML = '';
+  messageElement.textContent = '';
+  progressBar.style.width = '0%';
+  timerText.textContent = '';
+  votingPanel.classList.add('hidden');
+  loginPanel.classList.remove('hidden');
+  participantNameInput.focus();
 }
 
 async function pollState() {

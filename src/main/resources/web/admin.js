@@ -2,6 +2,7 @@ const adminLoginPanel = document.getElementById('adminLoginPanel');
 const adminPanel = document.getElementById('adminPanel');
 const adminPassword = document.getElementById('adminPassword');
 const adminEnterButton = document.getElementById('adminEnterButton');
+const adminLogoutButton = document.getElementById('adminLogoutButton');
 const adminLoginMessage = document.getElementById('adminLoginMessage');
 const questionList = document.getElementById('questionList');
 const adminProgressPanel = document.getElementById('adminProgressPanel');
@@ -36,6 +37,8 @@ adminEnterButton.addEventListener('click', async () => {
   adminLoginMessage.classList.remove('error');
   enterAdmin();
 });
+
+adminLogoutButton.addEventListener('click', () => resetAdminSession(''));
 
 async function enterAdmin() {
   adminLoginPanel.classList.add('hidden');
@@ -165,8 +168,11 @@ function resetAdminSession(message) {
   }
   adminPanel.classList.add('hidden');
   adminLoginPanel.classList.remove('hidden');
+  adminPassword.value = '';
   questionList.innerHTML = '';
   adminState.innerHTML = '';
+  adminProgressPanel.classList.add('hidden');
   adminLoginMessage.textContent = message;
-  adminLoginMessage.classList.add('error');
+  adminLoginMessage.classList.toggle('error', Boolean(message));
+  adminPassword.focus();
 }
