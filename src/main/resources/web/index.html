@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voterra</title>
+  <link rel="stylesheet" href="/web/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section id="loginPanel" class="panel">
+      <h1>Voterra</h1>
+      <label for="participantName">First Name + Last Name</label>
+      <div class="inline-form">
+        <input id="participantName" autocomplete="name" placeholder="Ada Lovelace">
+        <button id="enterButton">Enter</button>
+      </div>
+    </section>
+
+    <section id="votingPanel" class="panel hidden">
+      <div class="topline">
+        <span id="participantLabel"></span>
+        <a href="/admin">Admin</a>
+      </div>
+      <h2 id="questionText">Waiting for an active question</h2>
+      <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+      <p id="timerText" class="status-text"></p>
+      <div id="options" class="options"></div>
+      <div id="results" class="results"></div>
+      <p id="message" class="status-text"></p>
+    </section>
+  </main>
+  <script src="/web/app.js"></script>
+</body>
+</html>

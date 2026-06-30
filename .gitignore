@@ -23,6 +23,12 @@
 hs_err_pid*
 replay_pid*
 
+# Maven output
+target/
+
+# Voterra runtime output
+results.json
+
 
 # APM dependencies
 apm_modules/

@@ -1,0 +1,25 @@
+[
+  {
+    "id": "q1",
+    "text": "Which Java version should this project target?",
+    "multipleChoice": false,
+    "durationSeconds": 30,
+    "options": [
+      {"id": "java21", "text": "Java 21"},
+      {"id": "java24", "text": "Java 24"},
+      {"id": "java25", "text": "Java 25"}
+    ]
+  },
+  {
+    "id": "q2",
+    "text": "Which features matter most for live voting?",
+    "multipleChoice": true,
+    "durationSeconds": 45,
+    "options": [
+      {"id": "speed", "text": "Fast voting"},
+      {"id": "clarity", "text": "Clear results"},
+      {"id": "privacy", "text": "No passwords for participants"},
+      {"id": "admin", "text": "Simple admin control"}
+    ]
+  }
+]

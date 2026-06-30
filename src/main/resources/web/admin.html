@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voterra Admin</title>
+  <link rel="stylesheet" href="/web/styles.css">
+</head>
+<body>
+  <main class="shell wide">
+    <section id="adminLoginPanel" class="panel">
+      <h1>Voterra Admin</h1>
+      <label for="adminPassword">Admin password</label>
+      <div class="inline-form">
+        <input id="adminPassword" type="password" autocomplete="current-password">
+        <button id="adminEnterButton">Enter</button>
+      </div>
+      <p id="adminLoginMessage" class="status-text"></p>
+    </section>
+
+    <section id="adminPanel" class="panel hidden">
+      <div class="topline">
+        <span>Admin console</span>
+        <a href="/">Audience view</a>
+      </div>
+      <h2>Questions</h2>
+      <div id="questionList" class="question-list"></div>
+      <h2>Live state</h2>
+      <div id="adminProgressPanel" class="hidden">
+        <h2 id="adminQuestionText"></h2>
+        <div class="progress-track"><div id="adminProgressBar" class="progress-bar"></div></div>
+        <p id="adminTimerText" class="status-text"></p>
+      </div>
+      <div id="adminState" class="results"></div>
+    </section>
+  </main>
+  <script src="/web/admin.js"></script>
+</body>
+</html>
