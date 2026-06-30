@@ -1,0 +1,11 @@
+name: voterra
+version: 1.0.0
+description: APM project for voterra
+author: exadmin
+dependencies:
+  apm:
+  - Netcracker/qubership-ai-packages/agent-packages/english-us-developer-style
+  - Netcracker/qubership-ai-packages/agent-packages/russian-developer-style
+  mcp: []
+includes: auto
+scripts: {}

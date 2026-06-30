@@ -1,0 +1,52 @@
+lockfile_version: '1'
+generated_at: '2026-06-30T12:23:16.277005+00:00'
+apm_version: 0.22.0
+dependencies:
+- repo_url: Netcracker/qubership-ai-packages
+  name: english-us-developer-style
+  host: github.com
+  resolved_commit: 6e1852989d8278dce517d38c6976aa596756b2f8
+  version: 2.0.0
+  virtual_path: agent-packages/english-us-developer-style
+  is_virtual: true
+  package_type: apm_package
+  deployed_files:
+  - .agents/skills/english-developer-style
+  - .agents/skills/english-developer-style/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/english-developer-style/SKILL.md: sha256:c91fecf2c209428808e1c9ffc0cbe6cd735bd0786e266be533620e8164367da7
+  content_hash: sha256:41f96876d0a0644514a4c8b7da04b0cff02197bd5762f4d19f090958b54237f1
+- repo_url: Netcracker/qubership-ai-packages
+  name: russian-developer-style
+  host: github.com
+  resolved_commit: 6e1852989d8278dce517d38c6976aa596756b2f8
+  version: 1.0.1
+  virtual_path: agent-packages/russian-developer-style
+  is_virtual: true
+  package_type: apm_package
+  deployed_files:
+  - .agents/skills/russian-developer-style
+  - .agents/skills/russian-developer-style/SKILL.md
+  - .agents/skills/russian-developer-style/examples/before-after.md
+  - .agents/skills/russian-developer-style/examples/docs/config.md
+  - .agents/skills/russian-developer-style/glossary.md
+  - .agents/skills/russian-developer-style/lint/.yaspellerrc.json
+  - .agents/skills/russian-developer-style/lint/README.md
+  - .agents/skills/russian-developer-style/lint/languagetool.cfg
+  - .agents/skills/russian-developer-style/lint/typograf.config.js
+  - .agents/skills/russian-developer-style/modules/code-comments.md
+  - .agents/skills/russian-developer-style/modules/errors-logs.md
+  - .agents/skills/russian-developer-style/modules/ui-strings.md
+  deployed_file_hashes:
+    .agents/skills/russian-developer-style/SKILL.md: sha256:df6ac8d2bdae450bf082552b6766ac822dbac98060a8048b98a535798479c7df
+    .agents/skills/russian-developer-style/examples/before-after.md: sha256:2329bf33faa98fe5ab5052d2fca91a310e9a3ce130cfde07b263aa6c50ce5f16
+    .agents/skills/russian-developer-style/examples/docs/config.md: sha256:6aa84e78ca805683c48cb33d00afcfbd4b90c8f860c1c5aa2cecbd2d5d694b61
+    .agents/skills/russian-developer-style/glossary.md: sha256:d38da105321dab68437331462337aced1eedb16af5d433e162672cde5f059362
+    .agents/skills/russian-developer-style/lint/.yaspellerrc.json: sha256:b23130bb9a7436e3e9c34ed55e459e18b40306bb70011e50e8abf51005458e2a
+    .agents/skills/russian-developer-style/lint/README.md: sha256:8d5ccac7b7aad6852411e123e0e41c4372f3ab5d3b5997aab4626c04e6f6c0ac
+    .agents/skills/russian-developer-style/lint/languagetool.cfg: sha256:284898e08d2dd6014f22f5dac135dad63e5158c923bdd97e0f2af4b2d05b270f
+    .agents/skills/russian-developer-style/lint/typograf.config.js: sha256:619804400eafca81e73ae0e884ae55b38175968599293c6da92793667c1fafdb
+    .agents/skills/russian-developer-style/modules/code-comments.md: sha256:7649292b101f9b7bc09d07a180333f17e2ffcc3e5138b134851e932818c8ca9e
+    .agents/skills/russian-developer-style/modules/errors-logs.md: sha256:76d8dcc3f702ac6809bbc8522349a92233359944c57cdfcf07a3b1e1755332df
+    .agents/skills/russian-developer-style/modules/ui-strings.md: sha256:df3d2eb8511a234d33c9f7fae6d2f7841286941376eaf10f3b6843bfe8192a00
+  content_hash: sha256:3d7b034cc7aba0735e63a7d20da9a189fbc56da7c1d96b4126e0a825906b8a50
