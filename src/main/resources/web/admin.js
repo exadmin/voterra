@@ -114,11 +114,26 @@ async function pollAdminState() {
   title.innerHTML = `<span>${state.session.question.text}</span><strong>${state.open ? 'Open' : 'Closed'}</strong>`;
   adminState.append(title);
 
+  const totalVotes = Object.values(state.summary.countsByOptionId)
+    .reduce((sum, optionCount) => sum + optionCount, 0);
   for (const option of state.session.question.options) {
     const row = document.createElement('div');
     row.className = 'result-row';
     const count = state.summary.countsByOptionId[option.id] || 0;
-    row.innerHTML = `<span>${option.text}</span><strong>${count}</strong>`;
+    const details = document.createElement('div');
+    details.className = 'result-details';
+    const label = document.createElement('span');
+    label.textContent = option.text;
+    const track = document.createElement('div');
+    track.className = 'result-progress-track';
+    const bar = document.createElement('div');
+    bar.className = 'result-progress-bar';
+    bar.style.width = totalVotes === 0 ? '0%' : `${(count / totalVotes) * 100}%`;
+    track.append(bar);
+    details.append(label, track);
+    const countElement = document.createElement('strong');
+    countElement.textContent = count;
+    row.append(details, countElement);
     adminState.append(row);
   }
 }

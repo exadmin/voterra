@@ -1,13 +1,12 @@
 :root {
-  --blue-950: #020716;
-  --blue-900: #071437;
-  --blue-800: #10276a;
-  --blue-700: #173b91;
-  --gold-500: #d8a928;
-  --gold-300: #ffe189;
-  --white: #f8fbff;
-  --muted: #aebbe0;
-  --danger: #ff7c7c;
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #E0ECF7;
+  --color-brand-primary: #4F7AA0;
+  --color-brand-accent: #F8BF4C;
+  --color-brand-danger-accent: #E3475A;
+  --color-text-primary: #0E161E;
+  --color-muted: #B9C0C6;
+  --color-antialiasing: #BBB5B3;
 }
 
 * {
@@ -17,11 +16,11 @@
 body {
   margin: 0;
   min-height: 100vh;
-  color: var(--white);
+  color: var(--color-text-primary);
   font-family: Arial, Helvetica, sans-serif;
   background:
-    radial-gradient(circle at top, rgba(216, 169, 40, 0.22), transparent 28rem),
-    linear-gradient(135deg, var(--blue-950), var(--blue-900) 45%, #030817);
+    linear-gradient(180deg, rgba(224, 236, 247, 0.92), rgba(255, 255, 255, 0.96) 42%),
+    var(--color-bg-primary);
 }
 
 .shell {
@@ -35,11 +34,11 @@ body {
 }
 
 .panel {
-  border: 1px solid rgba(255, 225, 137, 0.42);
+  border: 1px solid rgba(79, 122, 160, 0.22);
   border-radius: 8px;
   padding: 28px;
-  background: rgba(7, 20, 55, 0.88);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.32);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 42px rgba(79, 122, 160, 0.14);
 }
 
 .hidden {
@@ -53,7 +52,7 @@ h2 {
 }
 
 h1 {
-  color: var(--gold-300);
+  color: var(--color-brand-primary);
   font-size: 42px;
 }
 
@@ -66,7 +65,7 @@ h1 {
 label {
   display: block;
   margin-bottom: 8px;
-  color: var(--gold-300);
+  color: var(--color-brand-primary);
 }
 
 .inline-form {
@@ -77,27 +76,28 @@ label {
 input {
   flex: 1;
   min-width: 0;
-  border: 1px solid rgba(255, 225, 137, 0.45);
+  border: 1px solid rgba(79, 122, 160, 0.35);
   border-radius: 6px;
   padding: 13px 14px;
-  color: var(--white);
-  background: rgba(2, 7, 22, 0.72);
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
   font-size: 16px;
 }
 
 button {
-  border: 1px solid var(--gold-300);
+  border: 1px solid var(--color-brand-accent);
   border-radius: 6px;
   padding: 12px 18px;
-  color: var(--blue-950);
-  background: linear-gradient(180deg, var(--gold-300), var(--gold-500));
+  color: var(--color-text-primary);
+  background: var(--color-brand-accent);
   font-weight: 700;
   cursor: pointer;
 }
 
 button.secondary {
-  color: var(--white);
-  background: var(--blue-700);
+  border-color: var(--color-brand-primary);
+  color: var(--color-bg-primary);
+  background: var(--color-brand-primary);
 }
 
 button:disabled {
@@ -110,26 +110,26 @@ button:disabled {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 18px;
-  color: var(--muted);
+  color: var(--color-brand-primary);
 }
 
 a {
-  color: var(--gold-300);
+  color: var(--color-brand-primary);
 }
 
 .progress-track {
   width: 100%;
   height: 18px;
   overflow: hidden;
-  border: 1px solid rgba(255, 225, 137, 0.35);
+  border: 1px solid rgba(79, 122, 160, 0.28);
   border-radius: 999px;
-  background: rgba(2, 7, 22, 0.8);
+  background: var(--color-bg-secondary);
 }
 
 .progress-bar {
   width: 0;
   height: 100%;
-  background: linear-gradient(90deg, var(--blue-700), var(--gold-500));
+  background: linear-gradient(90deg, var(--color-brand-primary), var(--color-brand-accent));
   transition: width 180ms linear;
 }
 
@@ -145,16 +145,16 @@ a {
   width: 100%;
   min-height: 56px;
   padding: 14px 16px;
-  border: 1px solid rgba(255, 225, 137, 0.45);
+  border: 1px solid rgba(79, 122, 160, 0.28);
   border-radius: 8px;
-  color: var(--white);
-  background: linear-gradient(180deg, var(--blue-800), var(--blue-900));
+  color: var(--color-text-primary);
+  background: linear-gradient(180deg, var(--color-bg-primary), var(--color-bg-secondary));
   text-align: left;
 }
 
 .option-button.selected {
-  border-color: var(--gold-300);
-  background: linear-gradient(180deg, #775f16, var(--blue-800));
+  border-color: var(--color-brand-accent);
+  background: linear-gradient(180deg, rgba(248, 191, 76, 0.34), var(--color-bg-primary));
 }
 
 .question-item {
@@ -173,20 +173,42 @@ a {
 .result-row {
   display: grid;
   grid-template-columns: 1fr auto;
+  align-items: center;
   gap: 12px;
   padding: 12px 14px;
-  border: 1px solid rgba(255, 225, 137, 0.28);
+  border: 1px solid rgba(79, 122, 160, 0.2);
   border-radius: 6px;
-  background: rgba(2, 7, 22, 0.55);
+  background: rgba(224, 236, 247, 0.54);
+}
+
+.result-details {
+  display: grid;
+  gap: 8px;
+}
+
+.result-progress-track {
+  width: 100%;
+  height: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(79, 122, 160, 0.2);
+  border-radius: 999px;
+  background: var(--color-bg-primary);
+}
+
+.result-progress-bar {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-brand-primary), var(--color-brand-accent));
+  transition: width 180ms linear;
 }
 
 .status-text {
   min-height: 22px;
-  color: var(--muted);
+  color: var(--color-brand-primary);
 }
 
 .error {
-  color: var(--danger);
+  color: var(--color-brand-danger-accent);
 }
 
 @media (max-width: 640px) {

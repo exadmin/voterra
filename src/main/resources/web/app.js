@@ -116,14 +116,26 @@ async function selectOption(question, optionId) {
 
 function renderResults(question, summary) {
   resultsElement.innerHTML = '';
+  const totalVotes = Object.values(summary.countsByOptionId)
+    .reduce((sum, count) => sum + count, 0);
   for (const option of question.options) {
     const row = document.createElement('div');
     row.className = 'result-row';
+    const details = document.createElement('div');
+    details.className = 'result-details';
     const label = document.createElement('span');
     label.textContent = option.text;
+    const track = document.createElement('div');
+    track.className = 'result-progress-track';
+    const bar = document.createElement('div');
+    bar.className = 'result-progress-bar';
+    const optionCount = summary.countsByOptionId[option.id] || 0;
+    bar.style.width = totalVotes === 0 ? '0%' : `${(optionCount / totalVotes) * 100}%`;
+    track.append(bar);
+    details.append(label, track);
     const count = document.createElement('strong');
-    count.textContent = summary.countsByOptionId[option.id] || 0;
-    row.append(label, count);
+    count.textContent = optionCount;
+    row.append(details, count);
     resultsElement.append(row);
   }
 }
